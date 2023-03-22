@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script>
+       
+    const calcularIMC=() =>{
+    peso = parseFloat(document.getElementById("idpeso").value);
+    altura = parseFloat(document.getElementById("idaltura").value);
+
+
+    calImc = peso / (altura * altura);
+
+
+   result = "";
+
+
+   if (calImc < 18.5) {
+    result = " (Abaixo do peso)";
+   } else if (calImc >= 18.6 && calImc <= 24.9) {
+    result = " (Peso normal)";
+   } else if (calImc >= 25 && calImc <= 29.9) {
+    result = " (Sobrepeso)";
+   } else if (calImc >= 30 && calImc <= 34.9) {
+    result = " (Obesidade grau I)";
+   } else if (calImc >= 35 && calImc <= 39.9) {
+    result = " (Obesidade grau II)";
+   } else if (calImc >= 40) {
+    result = " (Obesidade grau III)";
+   }
+
+   document.getElementById("result").value = result;
+}
+
+    </script>
+    <title>CALCULADORA IMC</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="title">Calculadora</h1>
+            <p>
+                <p class="text">Peso</p>
+                <input type="text" id="idpeso" >
+                <span class="medida">Kg</span>
+                
+                <p class="text">Altura</p>
+                <input type="text" id="idaltura" placeholder="Insira a altura">
+                <span class="medida">Cm</span></p>
+
+                <button type="button" class="calc" onclick="calcularIMC()">Calcular</button>
+
+                <input type="text" id="result" readonly>
+
+            </form>
+        </header>
+    </div>
+
+    
+</body>
+
+</html>
